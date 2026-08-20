@@ -1,0 +1,606 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+html {
+    scroll-behavior: smooth;
+}
+
+body {
+    font-family: 'Poppins', sans-serif;
+    background: #fffaf9;
+    color: #43231d;
+}
+
+
+/* ================= NAVBAR ================= */
+
+.navbar {
+    width: 100%;
+    height: 90px;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 0 5%;
+    background: white;
+    box-shadow: 0 2px 10px rgba(80, 40, 30, 0.08);
+    position: sticky;
+    top: 0;
+    z-index: 1000;
+}
+
+.logo {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+}
+
+.cake-icon {
+    font-size: 38px;
+}
+
+.logo h1 {
+    font-family: 'Pacifico', cursive;
+    font-size: 28px;
+    font-weight: normal;
+    color: #54251c;
+}
+
+.logo p {
+    font-size: 10px;
+    font-weight: 600;
+    color: #54251c;
+}
+
+nav {
+    display: flex;
+    align-items: center;
+    gap: 32px;
+}
+
+nav a {
+    text-decoration: none;
+    color: #43231d;
+    font-size: 15px;
+    position: relative;
+    padding: 10px 2px;
+    transition: 0.3s;
+}
+
+nav a:hover,
+nav a.active {
+    color: #e66f7a;
+}
+
+nav a.active::after {
+    content: "";
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    width: 100%;
+    height: 2px;
+    background: #e66f7a;
+}
+
+.cart {
+    border: none;
+    background: #fde1e3;
+    color: #b74c58;
+    padding: 13px 22px;
+    border-radius: 30px;
+    font-family: 'Poppins', sans-serif;
+    font-size: 14px;
+    cursor: pointer;
+}
+
+.cart:hover {
+    background: #f9ced2;
+}
+
+
+/* ================= HERO ================= */
+
+.hero {
+    width: 100%;
+    min-height: 470px;
+    display: flex;
+    background: #fce3e4;
+}
+
+.hero-text {
+    width: 50%;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+    padding: 50px;
+}
+
+.hero-text h2 {
+    font-family: 'Pacifico', cursive;
+    font-size: 56px;
+    line-height: 1.35;
+    font-weight: normal;
+    color: #52251d;
+}
+
+.heart-line {
+    color: #e8757e;
+    font-size: 20px;
+    margin: 12px 0;
+}
+
+.hero-text p {
+    font-size: 16px;
+    line-height: 1.8;
+    color: #49332d;
+}
+
+.main-btn {
+    margin-top: 20px;
+    padding: 13px 28px;
+    border: none;
+    border-radius: 30px;
+    background: #ed737d;
+    color: white;
+    font-family: 'Poppins', sans-serif;
+    font-size: 14px;
+    cursor: pointer;
+    transition: 0.3s;
+}
+
+.main-btn:hover {
+    background: #d85d68;
+    transform: translateY(-2px);
+}
+
+.hero-image {
+    width: 50%;
+    height: 470px;
+    overflow: hidden;
+}
+
+.hero-image img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
+
+
+/* ================= CAKES ================= */
+
+.cakes-section {
+    padding: 65px 7% 80px;
+    background: #fffdfc;
+    text-align: center;
+}
+
+.cakes-section > h2 {
+    font-family: 'DM Serif Display', serif;
+    font-size: 34px;
+    color: #54251c;
+}
+
+.section-description {
+    color: #765d57;
+    font-size: 14px;
+    margin-bottom: 30px;
+}
+
+.cake-container {
+    max-width: 1000px;
+    margin: 30px auto 0;
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 35px;
+}
+
+.cake-card {
+    background: white;
+    border: 1px solid #f0e2df;
+    border-radius: 18px;
+    padding: 10px 10px 25px;
+    box-shadow: 0 5px 20px rgba(80, 40, 30, 0.06);
+    transition: 0.3s;
+}
+
+.cake-card:hover {
+    transform: translateY(-7px);
+    box-shadow: 0 12px 30px rgba(80, 40, 30, 0.12);
+}
+
+.cake-image {
+    width: 100%;
+    height: 270px;
+    overflow: hidden;
+    position: relative;
+    border-radius: 12px;
+}
+
+.cake-image img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    transition: 0.4s;
+}
+
+.cake-card:hover .cake-image img {
+    transform: scale(1.04);
+}
+
+.favorite {
+    position: absolute;
+    top: 12px;
+    right: 12px;
+    width: 38px;
+    height: 38px;
+    border-radius: 50%;
+    border: 1px solid #f1cdd0;
+    background: white;
+    color: #e66f7a;
+    font-size: 19px;
+    cursor: pointer;
+}
+
+.favorite.selected {
+    background: #e66f7a;
+    color: white;
+}
+
+.cake-card h3 {
+    font-family: 'DM Serif Display', serif;
+    font-size: 25px;
+    color: #54251c;
+    margin-top: 13px;
+}
+
+.cake-card > p {
+    font-size: 13px;
+    color: #5d4843;
+    line-height: 1.6;
+    margin: 6px 20px;
+}
+
+
+/* CAKE DETAILS */
+
+.cake-details {
+    display: flex;
+    justify-content: center;
+    flex-wrap: wrap;
+    gap: 7px;
+    margin: 12px 5px;
+}
+
+.cake-details span {
+    background: #fff1f2;
+    color: #8a5558;
+    padding: 5px 9px;
+    border-radius: 15px;
+    font-size: 10px;
+}
+
+
+/* DETAILS BUTTON */
+
+.details-btn {
+    border: 1px solid #ed737d;
+    background: white;
+    color: #d85d68;
+    padding: 7px 18px;
+    border-radius: 20px;
+    cursor: pointer;
+    font-family: 'Poppins', sans-serif;
+    font-size: 12px;
+}
+
+.details-btn:hover {
+    background: #ed737d;
+    color: white;
+}
+
+.cake-card h4 {
+    font-family: 'DM Serif Display', serif;
+    color: #c74755;
+    font-size: 22px;
+    margin: 10px;
+}
+
+.order-btn {
+    border: none;
+    background: #ed737d;
+    color: white;
+    padding: 11px 28px;
+    border-radius: 25px;
+    font-family: 'Poppins', sans-serif;
+    cursor: pointer;
+}
+
+.order-btn:hover {
+    background: #d85d68;
+}
+
+
+/* ================= ABOUT ================= */
+
+.about-section {
+    display: flex;
+    align-items: center;
+    gap: 60px;
+    padding: 80px 10%;
+    background: #fce8e8;
+}
+
+.about-image,
+.about-text {
+    width: 50%;
+}
+
+.about-image img {
+    width: 100%;
+    height: 350px;
+    object-fit: cover;
+    border-radius: 20px;
+}
+
+.about-text h2 {
+    font-family: 'DM Serif Display', serif;
+    font-size: 35px;
+    color: #54251c;
+}
+
+.about-text p {
+    color: #5c4640;
+    font-size: 14px;
+    line-height: 1.8;
+    margin-bottom: 12px;
+}
+
+
+/* ================= ORDER ================= */
+
+.order-section {
+    padding: 75px 20px;
+    text-align: center;
+    background: #fffdfc;
+}
+
+.order-section h2 {
+    font-family: 'DM Serif Display', serif;
+    font-size: 35px;
+    color: #54251c;
+}
+
+#order-form {
+    max-width: 550px;
+    margin: 30px auto;
+    display: flex;
+    flex-direction: column;
+    text-align: left;
+}
+
+#order-form label {
+    margin: 12px 0 5px;
+    font-size: 13px;
+    font-weight: 600;
+}
+
+#order-form input,
+#order-form select,
+#order-form textarea {
+    width: 100%;
+    padding: 12px;
+    border: 1px solid #e5cecc;
+    border-radius: 8px;
+    font-family: 'Poppins', sans-serif;
+    outline: none;
+}
+
+#order-form input:focus,
+#order-form select:focus,
+#order-form textarea:focus {
+    border-color: #ed737d;
+}
+
+#order-form textarea {
+    height: 100px;
+    resize: vertical;
+}
+
+#order-form .main-btn {
+    align-self: center;
+}
+
+
+/* ================= CONTACT ================= */
+
+.contact-section {
+    padding: 70px 20px;
+    text-align: center;
+    background: #fce3e4;
+}
+
+.contact-section h2 {
+    font-family: 'DM Serif Display', serif;
+    font-size: 35px;
+    color: #54251c;
+}
+
+.contact-section > p {
+    color: #604944;
+}
+
+.contact-info {
+    margin-top: 20px;
+    line-height: 2;
+}
+
+
+/* ================= FOOTER ================= */
+
+footer {
+    background: #54251c;
+    color: white;
+    text-align: center;
+    padding: 30px;
+}
+
+footer h3 {
+    font-family: 'Pacifico', cursive;
+    font-weight: normal;
+    font-size: 25px;
+}
+
+footer p {
+    font-size: 12px;
+    margin-top: 6px;
+}
+
+
+/* ================= MODAL ================= */
+
+.modal {
+    display: none;
+    position: fixed;
+    inset: 0;
+    z-index: 2000;
+    background: rgba(50, 25, 20, 0.6);
+    justify-content: center;
+    align-items: center;
+    padding: 20px;
+}
+
+.modal-content {
+    width: 500px;
+    max-width: 100%;
+    background: white;
+    border-radius: 20px;
+    padding: 35px;
+    text-align: center;
+    position: relative;
+}
+
+.modal-content h2 {
+    font-family: 'DM Serif Display', serif;
+    color: #54251c;
+    font-size: 30px;
+}
+
+.modal-content > p {
+    color: #5c4640;
+    line-height: 1.7;
+}
+
+.close-btn {
+    position: absolute;
+    top: 10px;
+    right: 18px;
+    border: none;
+    background: none;
+    font-size: 30px;
+    color: #7c5550;
+    cursor: pointer;
+}
+
+.modal-details {
+    margin-top: 20px;
+    padding: 15px;
+    background: #fff1f2;
+    border-radius: 12px;
+    text-align: left;
+}
+
+.modal-details p {
+    font-size: 13px;
+    margin: 8px 0;
+}
+
+
+/* ================= RESPONSIVE ================= */
+
+@media (max-width: 1000px) {
+
+    .navbar {
+        height: auto;
+        padding: 18px 4%;
+        flex-wrap: wrap;
+        gap: 15px;
+    }
+
+    nav {
+        order: 3;
+        width: 100%;
+        justify-content: center;
+        flex-wrap: wrap;
+    }
+
+    .hero {
+        flex-direction: column;
+    }
+
+    .hero-text {
+        width: 100%;
+        padding: 60px 20px;
+    }
+
+    .hero-image {
+        width: 100%;
+        height: 400px;
+    }
+
+    .cake-container {
+        grid-template-columns: 1fr;
+    }
+
+    .about-section {
+        flex-direction: column;
+    }
+
+    .about-image,
+    .about-text {
+        width: 100%;
+    }
+}
+
+
+@media (max-width: 600px) {
+
+    .logo h1 {
+        font-size: 22px;
+    }
+
+    .logo p {
+        font-size: 8px;
+    }
+
+    .cake-icon {
+        font-size: 28px;
+    }
+
+    nav {
+        gap: 15px;
+    }
+
+    nav a {
+        font-size: 13px;
+    }
+
+    .hero-text h2 {
+        font-size: 40px;
+    }
+
+    .hero-image {
+        height: 300px;
+    }
+
+    .cake-container {
+        grid-template-columns: 1fr;
+    }
+
+    .cake-image {
+        height: 240px;
+    }
+}
